@@ -10,8 +10,11 @@
     <div id="header_bar" style="position: sticky; top: 0%;">
       <nav id="navigation_bar">
         <ul id="u01">
-          <li id="u01"><a href="home.html">Home</a></li>
-<!--           <li id="u01"><a href="home.html#contact_input">Contact</a></li>
+          <!-- <li id="u01"><a href="home.html">Home</a></li> -->
+          <!-- 用 erb 語法改寫 Home 的超連結： -->
+          <li id="u01"><%= link_to 'Home2', root_path%>
+
+          <!--<li id="u01"><a href="home.html#contact_input">Contact</a></li>
           <li id="u01"><a href="A grouped pure CSS parallax demo by Keith Clark.htm">Parallax demo</a></li> -->
           <li id="u01"><a href="about.html">About</a></li>
         </ul>
