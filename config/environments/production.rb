@@ -28,7 +28,9 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  # 180916 網頁部署到 heroku 上圖片無法顯示，參考這裡：https://booox.github.io/2017/05/06/heroku-image-dont-display/
+  # 修改 config.assets.compile = true
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
