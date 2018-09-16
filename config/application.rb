@@ -14,6 +14,8 @@ module AlphaBlog
     # 180916 部署至 heroku 推送失敗，故按照 stackoverflow 查到的方法新增這條：
     # https://stackoverflow.com/questions/19650621/heroku-upload-precompiling-assets-failed
     config.assets.initialize_on_precompile = false
+    # 一樣失敗 Precompiling assets failed.
+    # 安裝 brew install yarn 然後重開終端機就成功了 - 180916
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
