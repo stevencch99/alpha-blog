@@ -6,8 +6,17 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:a rticle].inspect # 觀察資料
     @article = Article.new(article_params)
-    @article.save
-    redirect_to articles_show(@article)
+    if @article.save
+      flash[:notice] = "Article was successfully created"
+      redirect_to article_path(@article)
+    else
+      render 'new'
+    end
+  end
+
+  def show
+    # find by article id(number)
+    @article = Article.find(params[:id])
   end
 
   private

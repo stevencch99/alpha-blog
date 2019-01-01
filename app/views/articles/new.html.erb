@@ -1,5 +1,16 @@
 <h1>Create an article</h1>
 <!-- form helper: https://guides.rubyonrails.org/form_helpers.html -->
+<!-- 190101 If there has some error messages occure when saving into database, -->
+<!-- then showing full messages on the new page which be rendered -->
+<% if @article.errors.any? %>
+<h2>The following errors prevented the article from getting created.</h2>
+<ul>
+  <% @article.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
 <%= form_for @article do |f| %>
   <p>
     <%= f.label :title %>
