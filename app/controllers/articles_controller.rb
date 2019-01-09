@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  # before_action makes redundant code cleaned
+  # define a private function set_article in order to do so - 190106
   before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def index
