@@ -9,9 +9,12 @@
   </head>
 
   <body>
-
+    <%= render 'layouts/navigation' %>
     <%= render 'layouts/messages' %>
-
-    <%= yield %>
+    <!-- 190112 where is the class "container" been defined? #issue-->
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
