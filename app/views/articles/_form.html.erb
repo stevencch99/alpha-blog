@@ -1,17 +1,11 @@
 <!-- form helper: https://guides.rubyonrails.org/form_helpers.html -->
 <!-- 190101 If there has some error messages occure when saving into database, -->
 <!-- then showing full messages on the new page which be rendered -->
+
+<!-- 190225 pass in paramas variable obj: as a pointer of @article -->
+<%= render 'shared/errors', obj: @article %>
+
 <!-- 表單排版 -->
-<% if @article.errors.any? %>
-<h2>The following errors prevented the article from getting created.</h2>
-<ul>
-  <% @article.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
-
-
 <div class="row">
   <div class="col-xs-12"
   <!-- setting column horizontal of whole page -->
