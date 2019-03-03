@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:a rticle].inspect # 觀察資料
     @article = Article.new(article_params) # pass in params from new method
+    @article.user = User.first
     if @article.save
       flash[:success] = "Article was successfully created"
       redirect_to article_path(@article)
