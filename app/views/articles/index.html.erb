@@ -9,6 +9,13 @@
         </div>
         <div class="article-body">
           <%= truncate(article.description, length: 100) %>
+          <div class="article-meta-details">
+            <!-- 190305 some articles which created earlier doesn't have user yet, it will cause NilClass error, so we temporarily fix this by having an if condition here -->
+            <small>Created by: <%= article.user.username if article.user %>,
+                   <%= time_ago_in_words(article.created_at) %> ago,
+                   last updated: <%= time_ago_in_words(article.updated_at) if article.updated_at %> ago,
+            </small>
+          </div>
         </div>
         <div class="article-action">
           <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-xs btn-primary" %>
